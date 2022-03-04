@@ -6,6 +6,14 @@ function getAll() {
         .select('u.user_id', 'u.username', 'r.role_name');
 }
 
+function getByUsername(username) {
+    return db('users')
+        .where({
+            username
+        })
+        .first();
+}
+
 function getById(id) {
     return db('users as u')
         .leftJoin('roles as r', 'u.role_id', 'r.role_id')
@@ -41,6 +49,7 @@ module.exports = {
     getAll,
     getById,
     getByRole,
+    getByUsername,
     add,
     update,
     remove

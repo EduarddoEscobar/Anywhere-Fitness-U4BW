@@ -3,7 +3,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 //Routers\\
-const usersRouter = require('./endpoints/users/users-router');
+const usersRouter = require('./endpoints/users/users-router')
 
 // async function insertUser(user) {
 //   // WITH POSTGRES WE CAN PASS A "RETURNING ARRAY" AS 2ND ARGUMENT TO knex.insert/update
@@ -13,6 +13,7 @@ const usersRouter = require('./endpoints/users/users-router');
 // }
 
 const server = express()
+
 server.use(express.json())
 server.use(helmet())
 server.use(cors())
