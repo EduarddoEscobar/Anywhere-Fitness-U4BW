@@ -32,7 +32,7 @@ async function update(id, changes) {
 }
 
 async function remove(id) {
-    let user = await findById(id);
+    let user = await getById(id);
     await db('users').where('user_id', id).del();
     return user;
 }

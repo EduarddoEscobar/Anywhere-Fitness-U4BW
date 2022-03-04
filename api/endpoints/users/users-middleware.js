@@ -10,9 +10,9 @@ async function validateUser(req, res, next) {
 }
 
 async function validatePayload(req, res, next) {
-    let {username, password, role_name} = req.body;
-    if(typeof username === 'string' && username.trim() && typeof password === 'string' && password.trim() && typeof role_name === 'string' && role_name.trim()){
-        req.user = {username: username.trim(), password: password.trim(), role_name: role_name.trim()};
+    let {username, password, role_id} = req.body;
+    if(typeof username === 'string' && username.trim() && typeof password === 'string' && password.trim() && typeof role_id === 'number'){
+        req.user = {username: username.trim(), password: password.trim(), role_id};
         next();
     }else{
         next({status: 400, message: 'All fields must be filled'});
