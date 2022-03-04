@@ -34,14 +34,14 @@ async function add(user) {
     return getById(id);
 }
 
-async function update(id, changes) {
-    await db('users').update(changes).where('user_id', id);
+async function update(user_id, changes) {
+    await db('users').update(changes).where({ user_id });
     return getById(id);
 }
 
-async function remove(id) {
-    let user = await getById(id);
-    await db('users').where('user_id', id).del();
+async function remove(user_id) {
+    let user = await getById(user_id);
+    await db('users').where({ user_id }).del();
     return user;
 }
 
