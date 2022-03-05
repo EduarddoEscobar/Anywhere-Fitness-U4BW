@@ -68,6 +68,8 @@ Install [Postgres](https://www.postgresql.org/download/) on your computer, takin
 |[PUT]/api/roles/:id   | Returns the updated role          |
 |[DELETE]/api/roles/:id| Returns the deleted role          |
 
+## Deployed App
+Check out the [Deployed App](https://anywhere-fitness-unit4-bw.herokuapp.com/)
 ## Video Demonstration
 
 The following demo explains how to set up a project using PostgreSQL and Heroku.

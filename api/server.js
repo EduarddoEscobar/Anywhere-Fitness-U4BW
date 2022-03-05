@@ -20,6 +20,10 @@ server.use(cors())
 
 server.use('/api/users', usersRouter);
 
+server.get('/', (req, res) => {
+  res.status(200).json('Welcome to Anywhere Fitness for all your fitness needs');
+})
+
 server.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     message: err.message,
