@@ -6,6 +6,7 @@ const cors = require('cors')
 //Routers\\
 const usersRouter = require('./endpoints/users/users-router')
 const rolesRouter = require('./endpoints/roles/roles-router')
+const classesRouter = require('./endpoints/classes/classes-router')
 const authRouter = require('./endpoints/auth/auth-router')
 
 //Global Middleware\\
@@ -19,6 +20,7 @@ server.use(cors())
 
 server.use('/api/users', restricted, usersRouter)
 server.use('/api/roles', restricted ,rolesRouter)
+server.use('/api/classes', restricted ,classesRouter)
 server.use('/api/auth', authRouter)
 
 server.get('/', (req, res) => {
