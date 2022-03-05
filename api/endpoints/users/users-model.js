@@ -8,6 +8,8 @@ function getAll() {
 
 function getByUsername(username) {
     return db('users')
+        .leftJoin('roles as r', 'u.role_id', 'r.role_id')
+        .select('u.user_id', 'u.username', 'r.role_name')
         .where({
             username
         })
@@ -35,13 +37,18 @@ async function add(user) {
 }
 
 async function update(user_id, changes) {
-    await db('users').update(changes).where({ user_id });
+    await db('users').update(changes).where({
+        user_id
+    });
     return getById(id);
 }
 
 async function remove(user_id) {
     let user = await getById(user_id);
-    await db('users').where({ user_id }).del();
+    await db('users').where({
+        user_id
+    })
+    .del();
     return user;
 }
 
