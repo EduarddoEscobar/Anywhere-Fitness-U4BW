@@ -44,9 +44,14 @@ Install [Postgres](https://www.postgresql.org/download/) on your computer, takin
 - **seed:prod** Runs all seeds in the Heroku database.
 
 ## Endpoints
-|Routes | Returns|
+**User routes**
+|Routes|Returns|
 |-------|--------|
 |[GET]/api/users| Returns an array of all users|
+|[GET]/api/users/:id| Returns the user of the given id|
+|[POST]/api/users| Returns the newly created user|
+|[PUT]/api/users/:id| Returns the updated user|
+|[DELETE]/api/users/:id| Returns the updated user|
 ## Video Demonstration
 
 The following demo explains how to set up a project using PostgreSQL and Heroku.
