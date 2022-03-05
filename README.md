@@ -46,19 +46,22 @@ Install [Postgres](https://www.postgresql.org/download/) on your computer, takin
 ## Endpoints
 
 **Auth routes**
-|Routes|Routes|
-|------|------|
+| Routes  | Returns  |
+| :------ | :------- |
+|[POST] /api/auth/register| Returns the newly registered user|
+|[POST] /api/auth/login| Returns a token and a welcome message|
+
 **User routes**
-|Routes|Returns|
-|-------|--------|
+| Routes  | Returns  |
+| :------ | :------- |
 |[GET]/api/users| Returns an array of all users|
 |[GET]/api/users/:id| Returns the user with the given id|
 |[PUT]/api/users/:id| Returns the updated user|
 |[DELETE]/api/users/:id| Returns the deleted user|
 
 **Roles routes**
-|Routes|Returns|
-|------|-------|
+| Routes  | Returns  |
+| :------ | :------- |
 |[GET]/api/roles| Returns an array of all roles|
 |[GET]/api/roles/:id| Returns the role with the given id|
 |[POST]/api/roles| Returns the newly created role|
