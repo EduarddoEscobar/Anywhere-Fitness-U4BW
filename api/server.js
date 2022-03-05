@@ -4,6 +4,7 @@ const cors = require('cors')
 
 //Routers\\
 const usersRouter = require('./endpoints/users/users-router')
+const rolesRouter = require('./endpoints/roles/roles-router')
 
 // async function insertUser(user) {
 //   // WITH POSTGRES WE CAN PASS A "RETURNING ARRAY" AS 2ND ARGUMENT TO knex.insert/update
@@ -18,10 +19,11 @@ server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
-server.use('/api/users', usersRouter);
+server.use('/api/users', usersRouter)
+server.use('/api/roles', rolesRouter)
 
 server.get('/', (req, res) => {
-  res.status(200).json('Welcome to Anywhere Fitness for all your fitness needs');
+  res.status(200).json('Welcome to Anywhere Fitness for all your fitness needs')
 })
 
 server.use((err, req, res, next) => {

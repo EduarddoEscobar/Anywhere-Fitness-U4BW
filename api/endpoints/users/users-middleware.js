@@ -7,7 +7,7 @@ async function validateUser(req, res, next) {
     } else {
         next({
             status: 404,
-            customMessage: 'User not found'
+            message: 'User not found'
         })
     }
 }

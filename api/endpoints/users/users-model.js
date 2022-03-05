@@ -30,8 +30,8 @@ function getByRole(role) {
 }
 
 async function add(user) {
-    let [id] = await db('users').insert(user);
-    return getById(id);
+    let [newUser] = await db('users').insert(user, ['user_id', 'username', 'role_id']);
+    return newUser;
 }
 
 async function update(user_id, changes) {

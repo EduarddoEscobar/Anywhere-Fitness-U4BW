@@ -1,7 +1,7 @@
 const Roles = require('./roles-model');
 
 async function roleNameFree(req, res, next) {
-    let role = await Roles.getById(req.params.id);
+    let role = await Roles.getByName(req.body.role_name);
     if (role) {
         next({
             status: 400,

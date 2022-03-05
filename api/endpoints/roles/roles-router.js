@@ -7,7 +7,7 @@ const {
     validatePayload
 } = require('./roles-middleware');
 
-router.get('/roles', (req, res, next) => {
+router.get('/', (req, res, next) => {
     Roles.getAll()
         .then(roles => {
             res.status(200).json(roles);
@@ -22,14 +22,14 @@ router.get('/:id', roleExists, (req, res, next) => {
 })
 
 router.post('/', validatePayload, roleNameFree, (req, res, next) => {
-    Roles.add(req.body)
+    Roles.add({role_name: req.body.role_name})
         .then(role => {
             res.status(201).json(role);
         }).catch(next);
 })
 
 router.put('/:id', validatePayload, roleExists, (req, res, next) => {
-    Roles.update(req.params.id, req.body)
+    Roles.update(req.params.id, req.body.role_name)
         .then(role => {
             res.status(200).json(role);
         }).catch(next);

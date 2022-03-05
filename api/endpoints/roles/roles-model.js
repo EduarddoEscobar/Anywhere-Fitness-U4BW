@@ -12,8 +12,9 @@ function getByName(role_name) {
     return db('roles').where({ role_name }).first();
 }
 
-function add(role_name) {
-    return db('roles').insert({ role_name }, ['role_id', 'role_name']).first();
+async function add(role) {
+    let [newRole] = await db('roles').insert(role, ['role_id', 'role_name']);
+    return newRole;
 }
 
 async function update(role_id, role_name) {
